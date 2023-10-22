@@ -49,10 +49,10 @@ function logFunctionUsage(functionName, parameters) {
 
 // Define a route for proxying requests to the external API
 app.get("/api/matches", async (req, res) => {
-  logFunctionUsage("/api/matches", {
-    matchIds: null,
-    authToken: req.headers["x-auth-token"],
-  });
+  // logFunctionUsage("/api/matches", {
+  //   matchIds: null,
+  //   authToken: req.headers["x-auth-token"],
+  // });
 
   try {
     const authToken = req.headers["x-auth-token"];
@@ -73,10 +73,10 @@ app.get("/api/matches", async (req, res) => {
 
 // Define a route for fetching user data
 app.get("/api/fetchUsers", async (req, res) => {
-  logFunctionUsage("/api/fetchUsers", {
-    matchIds: null,
-    authToken: req.headers["x-auth-token"],
-  });
+  // logFunctionUsage("/api/fetchUsers", {
+  //   matchIds: null,
+  //   authToken: req.headers["x-auth-token"],
+  // });
 
   const allUsers = [];
   const messageList = [0, 1];
@@ -133,10 +133,10 @@ app.get("/api/fetchUsers", async (req, res) => {
 });
 
 app.post("/api/deleteMatches", async (req, res) => {
-  logFunctionUsage("/api/deleteMatches", {
-    matchIds: req.body.matchIds,
-    authToken: req.headers["x-auth-token"],
-  });
+  // logFunctionUsage("/api/deleteMatches", {
+  //   matchIds: req.body.matchIds,
+  //   authToken: req.headers["x-auth-token"],
+  // });
 
   const matchIds = req.body.matchIds;
   const authToken = req.headers["x-auth-token"]; // Extracting authToken from headers
