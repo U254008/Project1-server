@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "../../Extention3"
+		},
+		{
+			"path": "../../../Project1/Extention2"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Extention3",
+		"liveServer.settings.port": 5501
+	}
+}
