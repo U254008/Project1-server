@@ -13,39 +13,39 @@ const corsOptions = {
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
-const MongoClient = require("mongodb").MongoClient;
-const uri =
-  "mongodb+srv://User1:User100@cluster0.gq855ck.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// const MongoClient = require("mongodb").MongoClient;
+// const uri =
+//   "mongodb+srv://User1:User100@cluster0.gq855ck.mongodb.net/?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-let logCollection; // We will assign the collection object to this variable after connection
+// let logCollection; // We will assign the collection object to this variable after connection
 
-client.connect((err) => {
-  if (err) throw err;
-  logCollection = client.db("test").collection("functionLogs");
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-});
+// client.connect((err) => {
+//   if (err) throw err;
+//   logCollection = client.db("test").collection("functionLogs");
+//   app.listen(port, () => {
+//     console.log(`Server is running on port ${port}`);
+//   });
+// });
 
-function logFunctionUsage(functionName, parameters) {
-  if (!logCollection) return;
-  logCollection.insertOne(
-    {
-      functionName: functionName,
-      parameters: parameters, // parameters is an object now, to handle multiple types of parameters more easily
-      timestamp: new Date(),
-    },
-    (err, result) => {
-      if (err) {
-        console.error("Error saving log to MongoDB:", err);
-      }
-    }
-  );
-}
+// function logFunctionUsage(functionName, parameters) {
+//   if (!logCollection) return;
+//   logCollection.insertOne(
+//     {
+//       functionName: functionName,
+//       parameters: parameters, // parameters is an object now, to handle multiple types of parameters more easily
+//       timestamp: new Date(),
+//     },
+//     (err, result) => {
+//       if (err) {
+//         console.error("Error saving log to MongoDB:", err);
+//       }
+//     }
+//   );
+// }
 
 // Define a route for proxying requests to the external API
 app.get("/api/matches", async (req, res) => {
