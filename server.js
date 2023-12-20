@@ -7,7 +7,8 @@ const port = process.env.PORT || 3000; // Use the environment variable PORT or f
 
 const corsOptions = {
   //origin: "http://localhost:3001", // Replace with the actual origin of your client
-  origin: "https://bulkaction.io",
+  // origin: "https://bulkaction.io",
+  origin: "https://glorious-spoon-r44xpvjw99wp265v-3000.app.github.dev/",
 };
 
 app.use(bodyParser.json());
